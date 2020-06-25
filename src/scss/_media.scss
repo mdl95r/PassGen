@@ -1,0 +1,33 @@
+@media only screen and (max-width: 992px) {
+    .header {
+        margin-bottom: 20px;
+    }
+
+    .main {
+        padding: 50px 0;
+    }
+
+    .password-generator {
+        margin-bottom: 0;
+    }
+
+    .footer {
+        justify-content: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    
+}
+
+@media only screen and (max-width: 576px) {
+    .top-bar {
+        .site-title {
+            font-size: 19px;
+            align-items: center;
+        }
+        .site-desc {
+           display: none;
+        }
+    }
+}

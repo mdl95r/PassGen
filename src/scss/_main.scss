@@ -1,0 +1,273 @@
+.main {
+    padding: 110px 0;
+}
+
+.password-generator {
+    .form-wrapper {
+        display: flex;
+        justify-content: center;
+
+        .switch-btn-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            span {
+                margin-right: 10px;
+            }
+
+            .switch-btn {
+                display: inline-block;
+                width: 60px;
+                height: 30px;
+                border-radius: 19px; 
+                background: #d3d3d3;
+                z-index: 0;
+                margin: 0;
+                padding: 0;
+                border: none;
+                cursor: pointer;
+                position: relative;
+                transition-duration: 300ms;
+                &:after {
+                    content: "";
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 17px;
+                    background: #fff;
+                    top: 0;
+                    left: 0;
+                    transition-duration: 300ms;
+                    position: absolute;
+                    z-index: 1;
+                    box-shadow: 0 0 3px grey;
+                }
+            }
+            
+            .switch-on {
+                background: #4CAF50;
+            }
+            .switch-on::after {
+                left: 31px;
+            }
+        }
+        
+        .range-wrapper {
+            text-align: center;
+            margin-bottom: 15px;
+            .range-label {
+                display: block;
+                margin-bottom: 10px;
+            }
+        
+            .current-value-wrapper {
+                margin-top: 15px;
+                display: flex;
+                justify-content: center;
+                span {
+                    margin-right: 5px;
+                }
+            }
+        
+            .range-input {
+                -webkit-appearance: none;
+                width: 100%;
+                height: 25px;
+                background: #d3d3d3;
+                opacity: .8;
+                outline: none;
+                border-radius: 10px;
+                -webkit-border-radius: 10px;
+                -moz-border-radius: 10px;
+                -ms-border-radius: 10px;
+                -o-border-radius: 10px;
+            }
+            
+            
+            .range-input::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                background: #4CAF50;
+                cursor: pointer;
+                border-radius: 100%;
+            }
+            
+            .range-input::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                background: #4CAF50;
+                cursor: pointer;
+                border-radius: 100%;
+            }
+        }
+
+        .btn-generate-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+            .btn-generate {
+                padding: 10px 20px;
+                background: #4CAF50;
+                color: #fff;
+                font-size: 15px;
+                letter-spacing: 1px;
+            }
+        }
+
+        .password-ready {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            // .passord-ready__label
+        
+            &__label {
+                text-align: center;
+                margin-bottom: 5px;
+            }
+        
+            // .passord-ready__input
+        
+            &__input {
+                border: 1px solid #b5b5b5;
+                padding: 3px 50px;
+                text-align: center;
+                color: $color_main;
+            }
+        
+            .copy-password-btn  {
+                position: absolute;
+                top: 24px;
+                right: 0;
+            }
+        
+            .popup-copy {
+                display: none;
+                position: absolute;
+                bottom: -32px;
+                right: -1px;
+                background: $grey;
+                padding: 5px;
+                color: $white;
+                font-size: 12px;
+                border-radius: 6px;
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: -10px;
+                    left: 50%;
+                    margin-left: -5px;
+                    border-width: 5px;
+                    border-style: solid;
+                    border-color: transparent transparent $grey transparent;
+                }
+            
+                &.active {
+                    display: block;
+                }
+            }
+        }
+
+        .password-secure-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+            .password-secure {
+                margin-right: 10px;
+            }
+        
+            span {
+                margin-right: 5px;
+                border-radius: 100%;
+                width: 15px;
+                height: 15px;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        
+            .default-color {
+                background: #ef9c03;
+            }
+        
+            .light-green-color {
+                background: #4db951;
+            }
+            .green-color {
+                background: #018601;
+            }
+        
+            .inactive {
+                display: none;
+            }
+        }
+
+        .delete-password {
+            display: none;
+            position: absolute;
+            top: 28px;
+            left: 1px;
+            width: 23px;
+            height: 21px;
+            background: transparent;
+            &:after {
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: 10px;
+                width: 2px;
+                height: 17px;
+                background: #a5a5a5;
+                transform: rotate(45deg);
+            }
+        
+            &:before {
+                content: '';
+                position: absolute;
+                top: 10px;
+                left: 3px;
+                width: 17px;
+                height: 2px;
+                background: #a5a5a5;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .copy-btn {
+        font-size: 15px;
+        color: #9f9f9f;
+        padding: 4px;
+    }
+
+    .password-options {
+        margin-bottom: 5px;
+        font-size: 15px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

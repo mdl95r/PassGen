@@ -1,0 +1,48 @@
+<main class="main">
+    <div class="container">
+        <section class="password-generator">
+            <h2 class="password-generator__title h2-title visually-hidden">Сгенирируйте безопасный пароль:</h2>
+
+            <div class="form-wrapper">
+                <form action="#" class="password-generator__form js-password-form">
+
+                    <div class="switch-btn-wrapper">
+                        <span>Спец. символы:</span>
+                        <div class="switch-btn"></div>
+                    </div>
+
+                    <div class="range-wrapper password-options">
+                        <label for="range" class="range-label">Выберете длину пароля:</label>
+                        <input checked type="range" min="6" max="16" value="6" id="range" name="range-name" class="range-input">
+                        <div class="current-value-wrapper">
+                            <span>Длина пароля: </span><div class="current-value" id="current-value">0</div>
+                        </div>
+                    </div>
+
+                    <div class="password-secure-wrapper">
+                        <div class="password-secure">Надежность пароля:</div>
+                        <span class="default-color"></span>
+                        <!-- 6-9 -->
+                        <span class="light-green-color inactive"></span>
+                        <!-- 9-12 -->
+                        <span class="green-color inactive"></span>
+                        <!-- 12-16 -->
+                    </div>
+
+                    <div class="btn-generate-wrapper">
+                        <button class="btn-generate" id="btn-generate">Сгенирировать пароль!</button>
+                    </div>
+                    
+                    <div class="password-ready password-options">
+                        <button class="delete-password js-delete-password" title="Сбросить пароль" aria-label="Сбросить пароль"></button>
+                        <label for="password-ready" class="password-ready__label">Ваш пароль:</label>
+                        <input type="text" id="password-ready" class="password-ready__input">
+                        <button class="js-copy-password-btn copy-password-btn copy-btn">Copy</button>
+                        <div class="js-copy-password popup-copy">Copy!</div>
+                    </div>  
+                </form>
+            </div>
+        </section>
+    </div>
+</main>
+

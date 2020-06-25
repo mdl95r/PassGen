@@ -1,0 +1,12 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 60px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    background: #6fbe72;
+    color: $white;
+    font-size: 18px;
+}
