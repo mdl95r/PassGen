@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
     const btnGenerate = document.getElementById('btn-generate');
     const range = document.getElementById('range');
     const val = document.getElementById('current-value');
@@ -9,30 +9,31 @@ document.addEventListener('DOMContentLoaded', function(){
     const GreenPass = document.querySelector('.green-color');
     const copyPass = document.querySelector('.js-copy-password');
     const DeletePass = document.querySelector('.js-delete-password');
+    const iconDel = document.querySelector('.delete-password__icon');
 
     val.innerHTML = range.value;
     let passwordLength = 6;
 
-    range.oninput = function() {
+    range.oninput = function () {
         val.innerHTML = this.value;
         if (range.value == 6) {
             GreenPass.classList.add('inactive');
             passwordLength = range.value
             lightGreenPass.classList.add('inactive');
         }
-    
+
         if (range.value == 7) {
             GreenPass.classList.add('inactive');
             passwordLength = range.value
             lightGreenPass.classList.add('inactive');
         }
-    
+
         if (range.value == 8) {
             passwordLength = range.value
             GreenPass.classList.add('inactive');
             lightGreenPass.classList.add('inactive');
         }
-    
+
         if (range.value == 9) {
             passwordLength = range.value
             lightGreenPass.classList.remove('inactive');
@@ -44,19 +45,19 @@ document.addEventListener('DOMContentLoaded', function(){
             GreenPass.classList.add('inactive');
             lightGreenPass.classList.remove('inactive');
         }
-    
+
         if (range.value == 11) {
             passwordLength = range.value
             GreenPass.classList.add('inactive');
             lightGreenPass.classList.remove('inactive');
         }
-    
+
         if (range.value == 12) {
             passwordLength = range.value
             GreenPass.classList.add('inactive');
             lightGreenPass.classList.remove('inactive');
         }
-    
+
         if (range.value == 13) {
             passwordLength = range.value
             GreenPass.classList.remove('inactive');
@@ -68,13 +69,13 @@ document.addEventListener('DOMContentLoaded', function(){
             GreenPass.classList.remove('inactive');
             lightGreenPass.classList.remove('inactive');
         }
-    
+
         if (range.value == 15) {
             passwordLength = range.value
             GreenPass.classList.remove('inactive');
             lightGreenPass.classList.remove('inactive');
         }
-    
+
         if (range.value == 16) {
             passwordLength = range.value
             GreenPass.classList.remove('inactive');
@@ -96,15 +97,16 @@ document.addEventListener('DOMContentLoaded', function(){
         }
         passwordReady.value = retVal;
         return retVal;
-    }    
-                    
-    btnGenerate.addEventListener('click',function(e){
+    }
+
+    btnGenerate.addEventListener('click', function (e) {
         e.preventDefault();
         generatePassword();
         DeletePass.style.display = 'block';
+        iconDel.style.display = 'block';
     });
 
-    passwordCopy.addEventListener('click', function(e) {
+    passwordCopy.addEventListener('click', function (e) {
         e.preventDefault();
         if (passwordReady.value == '' || passwordReady.value == null) {
             copyPass.innerText = 'Сгенирируйте пароль!'
@@ -116,25 +118,26 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     });
 
-    passwordCopy.addEventListener('mouseover', function() {
+    passwordCopy.addEventListener('mouseover', function () {
         copyPass.classList.add('active')
     });
 
-    passwordCopy.addEventListener('mouseout', function() {
-        setTimeout(function() {
+    passwordCopy.addEventListener('mouseout', function () {
+        setTimeout(function () {
             copyPass.classList.remove('active');
             copyPass.innerText = 'Copy this!'
             passwordReady.style.boxShadow = '';
         }, 1500)
     });
 
-    btnShow.addEventListener('click', function() {
+    btnShow.addEventListener('click', function () {
         this.classList.toggle('switch-on');
     });
 
-    DeletePass.addEventListener('click', function(e) {
+    DeletePass.addEventListener('click', function (e) {
         e.preventDefault();
         passwordReady.value = '';
         this.style.display = '';
+        iconDel.style.display = '';
     });
 });
