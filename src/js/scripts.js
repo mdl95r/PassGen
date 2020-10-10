@@ -13,73 +13,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     val.innerHTML = range.value;
     let passwordLength = 6;
-
     range.oninput = function () {
         val.innerHTML = this.value;
-        if (range.value == 6) {
-            GreenPass.classList.add('inactive');
-            passwordLength = range.value
-            lightGreenPass.classList.add('inactive');
-        }
-
-        if (range.value == 7) {
-            GreenPass.classList.add('inactive');
-            passwordLength = range.value
-            lightGreenPass.classList.add('inactive');
-        }
-
-        if (range.value == 8) {
-            passwordLength = range.value
-            GreenPass.classList.add('inactive');
-            lightGreenPass.classList.add('inactive');
-        }
-
-        if (range.value == 9) {
-            passwordLength = range.value
-            lightGreenPass.classList.remove('inactive');
-            GreenPass.classList.add('inactive');
-        }
-
-        if (range.value == 10) {
-            passwordLength = range.value
-            GreenPass.classList.add('inactive');
-            lightGreenPass.classList.remove('inactive');
-        }
-
-        if (range.value == 11) {
-            passwordLength = range.value
-            GreenPass.classList.add('inactive');
-            lightGreenPass.classList.remove('inactive');
-        }
-
-        if (range.value == 12) {
-            passwordLength = range.value
-            GreenPass.classList.add('inactive');
-            lightGreenPass.classList.remove('inactive');
-        }
-
-        if (range.value == 13) {
-            passwordLength = range.value
-            GreenPass.classList.remove('inactive');
-            lightGreenPass.classList.remove('inactive');
-        }
-
-        if (range.value == 14) {
-            passwordLength = range.value
-            GreenPass.classList.remove('inactive');
-            lightGreenPass.classList.remove('inactive');
-        }
-
-        if (range.value == 15) {
-            passwordLength = range.value
-            GreenPass.classList.remove('inactive');
-            lightGreenPass.classList.remove('inactive');
-        }
-
-        if (range.value == 16) {
-            passwordLength = range.value
-            GreenPass.classList.remove('inactive');
-            lightGreenPass.classList.remove('inactive');
+        switch (+range.value) {
+            case 6:
+            case 7:
+            case 8:
+                GreenPass.classList.add('inactive');
+                passwordLength = range.value
+                lightGreenPass.classList.add('inactive');
+                break;
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                GreenPass.classList.add('inactive');
+                passwordLength = range.value
+                lightGreenPass.classList.remove('inactive');
+                break;
+            case 13:
+            case 14:
+            case 15:
+            case 16:
+                GreenPass.classList.remove('inactive');
+                passwordLength = range.value
+                lightGreenPass.classList.remove('inactive');
+                break;
+            default:
+                console.log("Нет таких значений");
         }
     }
 
